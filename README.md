@@ -1,4 +1,1 @@
-# Checklist-App
-
-Aldi Wahyu Saragih
-aldiwahyu.saragih@gmail.com
+## Android Bluetooth Printer App
