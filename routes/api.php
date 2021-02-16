@@ -20,3 +20,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('login', 'api\AuthController@login');
 Route::post('register', 'api\AuthController@register');
+
+Route::group(['middleware' => ['auth:api']], function () {
+
+    Route::group(['middleware' => ['role:admin']], function () {
+        Route::get('mahasiswa', 'JadwalMahasiswaController@getAllMahasiswaWithJadwalAndDosen');
+        Route::get('jadwal', 'JadwalMahasiswaController@getAllJadwalWithDosen');
+    });
+    
+    Route::group(['middleware' => ['role:dosen']], function () {
+        
+    });
+
+});
