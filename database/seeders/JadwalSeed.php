@@ -22,22 +22,33 @@ class JadwalSeed extends Seeder
 
         for ($i=0; $i < 12; $i++) { 
 
-            DB::table('jadwals')->insert([
-                'id_mahasiswa' => $mahasiswa[$i]->id,
-                'id_matkul' => $matkul[$i]->id,
-                'id_dosen' => $dosen->id,
-            ]);
-    
-        }
+            if ($i % 2 == 0) {
 
-        for ($i=5; $i <= 10; $i++) { 
-
-            DB::table('jadwals')->insert([
-                'id_mahasiswa' => $mahasiswa[$i]->id,
-                'id_matkul' => $matkul[9]->id,
-                'id_dosen' => $dosenPemasaran->id,
-            ]);
+                DB::table('jadwals')->insert([
+                    'id_mahasiswa' => $mahasiswa[$i]->id,
+                    'id_matkul' => $matkul[$i]->id,
+                    'id_dosen' => $dosen->id,
+                ]);
     
+                DB::table('dosens')->insert([
+                    'id_matkul' => $matkul[$i]->id,
+                    'id_dosen' => $dosen->id,
+                ]);
+
+            } else {
+
+                DB::table('jadwals')->insert([
+                    'id_mahasiswa' => $mahasiswa[$i]->id,
+                    'id_matkul' => $matkul[$i]->id,
+                    'id_dosen' => $dosenPemasaran->id,
+                ]);
+    
+                DB::table('dosens')->insert([
+                    'id_matkul' => $matkul[$i]->id,
+                    'id_dosen' => $dosenPemasaran->id,
+                ]);
+
+            } 
         }
     }
 }

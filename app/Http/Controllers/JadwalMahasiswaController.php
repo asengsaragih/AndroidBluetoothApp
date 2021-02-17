@@ -6,8 +6,7 @@ use App\Models\Jadwal;
 use App\Models\Mahasiswa;
 use App\Models\Matkul;
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class JadwalMahasiswaController extends Controller
 {

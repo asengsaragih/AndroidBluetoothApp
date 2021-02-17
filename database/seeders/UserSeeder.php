@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class UserSeeder extends Seeder
 {
@@ -32,13 +33,13 @@ class UserSeeder extends Seeder
 
         $dosen->assignRole('dosen');
 
-        $dosen = User::create([
+        $dosenPemasaran = User::create([
             'nip' => '103041639872',
             'name' => 'Dosen Pemasaran',
             'username' => 'dosenpemasaran',
             'password' => bcrypt('dosen'),
         ]);
 
-        $dosen->assignRole('dosen');
+        $dosenPemasaran->assignRole('dosen');
     }
 }
