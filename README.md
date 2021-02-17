@@ -12,3 +12,6 @@ php artisan passport:install
 
 php artisan serve
 ```
+
+Postman Link
+https://documenter.getpostman.com/view/12274363/TWDUpxpC
