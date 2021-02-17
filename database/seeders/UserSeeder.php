@@ -31,5 +31,14 @@ class UserSeeder extends Seeder
         ]);
 
         $dosen->assignRole('dosen');
+
+        $dosen = User::create([
+            'nip' => '103041639872',
+            'name' => 'Dosen Pemasaran',
+            'username' => 'dosenpemasaran',
+            'password' => bcrypt('dosen'),
+        ]);
+
+        $dosen->assignRole('dosen');
     }
 }
